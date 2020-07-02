@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Mario Kart</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+</head>
+<body>
+  <div class="container">
+    <h1> Mario Kart</h1>
+    <main>
+      <section>
+          <form id="signUp">
+            <h3>Sign Up:</h3>
+          <input name="credentials[email]" type='email'
+          placeholder="Email" required>
+          <input name="credentials[password]" type='password'
+          placeholder="Password" required>
+          <input name="credentials[password_confirmation]" type='password'
+          placeholder="password_confirmation" required>
+          <button type="submit">Sign Up</button>
+          <p id="authMess"></p>
+        </form>
+        </section>
+
+        <section>
+
+           <form id="signIn">
+           <h3>Sign In:</h3>
+           <input name="credentials[email]" type='email'
+           placeholder="Email" required>
+           <input name="credentials[password]" type='password'
+           placeholder="Password" required>
+           <button type="submit">Sign In</button>
+           <p id="authMess"></p>
+         </form>
+         </section>
+
+
+         <form id="changePassword">
+          <h3>Change Password:</h3>
+         <input name="password[old]" type='password'
+         placeholder=" Old Password" required>
+         <input name="password[new]" type='password'
+         placeholder="New Password" required>
+         <button class="change-pw-bttn" type="submit">Sumbit</button>
+         <p id="authMess"></p>
+       </form>
+
+
+       <form id="SignOut">
+        <h3>sign Out:</h3>
+       <button type="submit">Submit</button>
+       <p id="authMess"></p>
+     </form>
+
+    </main>
+  </div>
