@@ -1,0 +1,14 @@
+{{#each characters as |character|}}
+<section class="show-pods" data-id="{{character._id}}">
+  <div><h3>Name:</h3><h5>{{character.name}}</h5></div>
+  <div><h3>Infomation:</h3><h5>{{character.info}}</h5></div>
+  {{#if (checkOwner character.owner)}}
+  <button type="submit" class="btn btn-danger" data-id="{{character._id}}">Delete</button>
+  <form class="updateRate" data-id="{{character._id}}">
+    <button type="submit" class="btn btn-outline-success btn-rounded waves-effect">Update</button>
+    <input required type="text"  name="character">
+  </form>
+  {{/if}}
+</section>
+
+{{/each}}

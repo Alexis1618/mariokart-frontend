@@ -12,72 +12,58 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-</head>
-<body>
-  <div class="container">
-    <h1> Mario Kart</h1>
-    <main>
-      <section>
-          <form id="signUp">
-            <h3>Sign Up:</h3>
-          <input name="credentials[email]" type='email'
-          placeholder="Email" required>
-          <input name="credentials[password]" type='password'
-          placeholder="Password" required>
-          <input name="credentials[password_confirmation]" type='password'
-          placeholder="password_confirmation" required>
-          <button type="submit">Sign Up</button>
-          <p id="authMess"></p>
-        </form>
+    <div class="container">
+      <section id="sign-up-section" class="auth-form hidden page">
+         <h1>Mario Kart</h1>
+
+         <form id="sign-up-form">
+           <h2>Sign Up</h2>
+           <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+           <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+           <input class="form-control" type="password" required placeholder="Confirm Password" name="credentials[password_confirmation]">
+           <button type="submit" class="btn btn-success">Sign Up</button>
+         </form>
+       </section>
+
+          <section id="sign-in-section" class="auth-form page">
+          <form id="sign-in-form">
+            <h2 id="quick-in">Sign In</h2>
+            <input class="form-control" type="email" required placeholder="Email" name="credentials[email]">
+            <input class="form-control" type="password" required placeholder="Password" name="credentials[password]">
+            <button type="submit" class="btn btn-success">Sign In</button>
+          </form>
+
         </section>
 
-        <section>
-
-           <form id="signIn">
-           <h3>Sign In:</h3>
-           <input name="credentials[email]" type='email'
-           placeholder="Email" required>
-           <input name="credentials[password]" type='password'
-           placeholder="Password" required>
-           <button type="submit">Sign In</button>
-           <p id="authMess"></p>
-         </form>
-         </section>
+        <section id="change-pw-section" class="auth-form hidden page">
+            <form id="change-pw-form">
+              <h2>Change Password</h2>
+              <input class="form-control" type="password" required placeholder="Old Password" name="passwords[old]">
+              <input class="form-control" type="password" required placeholder="New Password" name="passwords[new]">
+              <button class="btn btn-success" type="submit">Change Password</button>
+            </form>
+          </section>
 
 
-         <form id="changePassword">
-          <h3>Change Password:</h3>
-         <input name="password[old]" type='password'
-         placeholder=" Old Password" required>
-         <input name="password[new]" type='password'
-         placeholder="New Password" required>
-         <button class="change-pw-bttn" type="submit">Sumbit</button>
-         <p id="authMess"></p>
-       </form>
-
-
-       <form id="SignOut">
-        <h3>sign Out:</h3>
-       <button type="submit">Submit</button>
+       <form id="Sign-out">
+        <h3>Sign Out:</h3>
+      <button id="signout-button" type='submit'>Sign Out</button>
        <p id="authMess"></p>
      </form>
 
 
-<body>
-
-     <div class="character-select" tabindex="1">Switch Character</div>
-   	<input type="radio" name="character-select" id="mario-character-select" value="mario" checked />
-   	<label for="mario-character-select"></label>
-   	<input type="radio" name="character-select" id="bowser-character-select" value="bowser" />
-   	<label for="bowser-character-select"></label>
-   	<input class="controller" type="search" pattern=".*a" placeholder=" " title="Press (a) to turn left, and (d) to turn right" autofocus />
-   	<div class="output">
-   		<div class="road"></div>
-   		<div class="trees"></div>
-   		<div class="driver mario"></div>
-   		<div class="driver bowser"></div>
-   		<div class="keyboard"></div>
+  <div class="character-select" tabindex="1">Select Character</div>
+    <input type="radio" id="mario" name="character" value="character">
+      <label for="mario">Mario</label><br>
+    <input type="radio" id="luigi" name="character" value="character">
+      <label for="luigi">Luigi</label><br>
+      <input type="radio" id="peaches" name="character" value="character">
+    <label for="Peaches">Peaches</label><br>
+      <input type="radio" id="bowser" name="character" value="character">
+    <label for="Bowser">Bowser</label><br>
+    <input type="radio" id="other" name="other" >
+    <input type="text" id="other" name="other" placeholder="new character">
+      <label for="other"></label>
+    <input type="submit" id="createBtn" value="create">
    	</div>
-
-    </main>
-  </div>
+</body>

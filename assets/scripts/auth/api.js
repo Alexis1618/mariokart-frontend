@@ -1,12 +1,12 @@
 'use strict'
 
-const config = require('./../config.js')
-const store = require('./../store.js')
+const config = require('./../config')
+const store = require('./../store')
 
 const signUp = function (data) {
   return $.ajax({
-    method: 'POST',
     url: config.apiUrl + '/sign-up',
+    method: 'POST',
     data: {
       credentials: {
         email: data.credentials.email,
@@ -19,8 +19,8 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
-    method: 'POST',
     url: config.apiUrl + '/sign-in',
+    method: 'POST',
     data: {
       credentials: {
         email: data.credentials.email,
@@ -32,24 +32,24 @@ const signIn = function (data) {
 
 const changePassword = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/change-password',
     method: 'PATCH',
+    url: config.apiUrl + '/change-password',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
       passwords: {
-        old: data.passwords.old,
-        new: data.passwords.new
+        old: data.credentials.old,
+        new: data.credentials.new
       }
     }
   })
 }
 
-const signOut = function () {
+const signOut = function (data) {
   return $.ajax({
-    method: 'DELETE',
     url: config.apiUrl + '/sign-out',
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
